@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="arhive-head">
+  <div class="container">
+    <h1 class="archive-title">Tag: <span>{{ page.tag }}</span></h1>
+  </div>
+</div>
+
+{% assign alldocs = site.projects | <additional filtering and sorting> %}
+{% assign grouptag = alldocs | map: 'tags' | join: ',' | split: ',' | group_by: tag %}
+{%- for tag in grouptag -%}
+  <h1>{{- tag.name -}} - {{tag.size}}</h1>
+  {%- for document in alldocs -%}
+    {% if document.tags contains tag.name %}
+      {% include article-content.html %}
+    {% endif %}
+  {%- endfor -%}
+{%- endfor -%}

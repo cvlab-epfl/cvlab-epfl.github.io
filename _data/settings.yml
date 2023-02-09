@@ -1,0 +1,34 @@
+#-------------------------------
+# General Site Settings
+title: CVLAB Publications
+# logo: logo.svg # You can add own logo.
+description: CVLAB Publications
+
+
+#-------------------------------
+# Author Settings
+author:
+  name: CVLAB
+  image: 
+  say-hello:
+  bio: 
+
+#-------------------------------
+# Comment Section (Disqus)
+disqus-identifier: # add your shortname for Disqus Comment. For example mr-brown
+
+
+#-------------------------------
+# Instagram Feed
+instafeed: # To enable the instafeed, use the value true. To turn off use the value false.
+instagram-profile:  # Add instagram username
+
+
+#-------------------------------
+# Google Analytics
+google-analytics: # Add your identifier. For example UA-99631805-1.
+
+
+#-------------------------------
+# Newsletter
+mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
