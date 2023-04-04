@@ -6,7 +6,12 @@
     <div class="article__wrapper">
 
         <!-- <a href="{{ site.baseurl }}{{ page.url }}"><img class="image" src="{{ site.baseurl }}{{ page.path | remove: 'index.html'}}images/cover.png"/></a> -->
-        <a href="{{ site.baseurl }}{{ page.url }}" class="article__image" style="background-image: url({{ site.baseurl }}{{ page.url | remove: 'index'}}images/cover.png)"></a>
+        {% if page.outurl %}
+          <a href="{{ page.outurl }}" class="article__image" style="background-image: url({{ site.baseurl }}{{ page.url | remove: 'index'}}images/cover.png)"></a>
+        {% else %}
+          <a href="{{ site.baseurl }}{{ page.url }}" class="article__image" style="background-image: url({{ site.baseurl }}{{ page.url | remove: 'index'}}images/cover.png)"></a>
+        {% endif %}
+        
 
         <div class="article__content {{ without-image }}">
           <div class="article-tags">
@@ -21,7 +26,11 @@
           </div>
       
           <h2 class="article__title">
-            <a href="{{ site.baseurl }}{{ page.url }}"> {{ page.title }}</a>
+            {% if page.outurl %}
+              <a href="{{ page.outurl }}"> {{ page.title }}</a>
+            {% else %}
+              <a href="{{ site.baseurl }}{{ page.url }}"> {{ page.title }}</a>
+            {% endif %}
           </h2>
       
           <small>{{ page.authors }}</small>
@@ -53,6 +62,7 @@
                 <span>arXiv</span>
               </a>
             </span>
+            {% if page.papercode %}
             &emsp;
             <span class="link-block">
               <a href="{{ page.papercode }}" class="external-link button is-normal is-rounded is-dark">
@@ -62,9 +72,10 @@
                 <span>Code</span>
               </a>
             </span>
+            {% endif %}
             &emsp;
             <span class="link-block">
-              <a href="{{ page.papercode }}" class="external-link button is-normal is-rounded is-dark">
+              <a href="{{ page.paperpage }}" class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                   <i class="ion ion-ios-globe"></i>
                 </span>
